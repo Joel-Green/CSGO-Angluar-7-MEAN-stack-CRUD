@@ -1,8 +1,12 @@
 const express = require('express'),
 path = require('path'),
  bodyParser = require('body-parser'),
- mongoose = require('mongoose');
+ mongoose = require('mongoose'),
+ fs = require('fs'),
+ multer = require('multer');
 config=require('./DB');
+const app = express();
+let  weapon= require('./models/weaponSchema');
 
 const weaponRoute=require('./routes/weapon.route');
 const updateRoute=require('./routes/update.route');
@@ -14,19 +18,64 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
   err => { console.log('Can not connect to the database'+ err)}
 );
 
-const app = express();
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-  // res.setHeader('Access-Control-Allow-Methods', 'POST');
-  // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-  // res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+
+const DIR = '../src/assets/images';
+
+
+let storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, DIR);
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '-' + Date.now() + '.' + file.originalname);
+
+    // this is the file name it is always unique save this value to db => file.fieldname + '-' + Date.now() + '.' + file.originalname
+  }
+});
+let upload = multer({storage: storage});
+
+app.post('/Weapon/upload/:id',upload.single('photo'), function (req, res) {
+  _id= req.params.id;
+  console.log(_id);
+  if (!req.file) {
+      console.log("No file received");
+      return res.send({
+        success: false
+      });
   
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+    } else {
+      
+      console.log('file received, file name '+ res.req.file.filename);
+      
+      weapon.findById(req.params.id, function(err, weapons) {
+        if (!weapons){
+          console.log(err);
+          console.log(req.params.id);
+          }
+        else {
+            weapons.image_upload = res.req.file.filename;
+            weapons.save().then(Weapon => {res.json('Update complete');
+          })
+          .catch(err => {
+                res.status(400).send("unable to update the database");
+          });
+        }
+      });
+
+      return res.send({
+        success: true
+      })
+    }
 });
 
 let port = process.env.PORT || 4000;

@@ -8,11 +8,11 @@ import { WeaponServiceService } from '../weapon-service.service';
   styleUrls: ['./learn-weapons.component.css']
 })
 export class LearnWeaponsComponent implements OnInit {
-  weapon_name:string;
-  weapon_damage:string;
-  weapon_mobility:String;
-  weapon_FireRate:String;
-  weapon_recoil:String;
+  // weapon_name:string;
+  // weapon_damage:string;
+  // weapon_mobility:String;
+  // weapon_FireRate:String;
+  // weapon_recoil:String;
    page=1;
    arr:weaponClass[];
   noOfPages:any;
