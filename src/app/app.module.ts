@@ -28,6 +28,11 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { UpdatepageService } from './updatepage.service';
 
 import { FeedbackService } from './feedback.service';
+import { DashWeaponComponent } from './dash-weapon/dash-weapon.component';
+import { DashUtilityComponent } from './dash-utility/dash-utility.component';
+import { DashFeedbackComponent } from './dash-feedback/dash-feedback.component';
+import { DashUpdatesComponent } from './dash-updates/dash-updates.component';
+import { DashUpdateContentComponent } from './dash-update-content/dash-update-content.component';
 
 
 
@@ -52,7 +57,12 @@ import { FeedbackService } from './feedback.service';
     CtDataComponent,
     TDataComponent,
     UploadImageComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    DashWeaponComponent,
+    DashUtilityComponent,
+    DashFeedbackComponent,
+    DashUpdatesComponent,
+    DashUpdateContentComponent
   ],
   imports: [
     NgbModule,

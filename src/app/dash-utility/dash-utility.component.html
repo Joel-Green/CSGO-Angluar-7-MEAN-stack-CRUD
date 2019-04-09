@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-lg-4 offset-lg-1">
+    <form class="text-white text-center">
+      <h1>Add Utility</h1>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Utility Name</label>
+          <br>
+          <input type="text" class="form-control" name="weapon_name" [(ngModel)]="weapon_name">
+        </div>
+        
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Choose An Image</label>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <label>Image</label>
+              <input type="file" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-dark" (click)="add_data()">Upload</button>
+    </form>
+  </div>
+  
+  <div class="col-lg-5 offset-lg-1 text-white text-center">
+    <h1>Display Utlity</h1>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col" colspan="3">Changes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td><button class="button btn-dark">Delete</button>
+            <button class="button btn-dark">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

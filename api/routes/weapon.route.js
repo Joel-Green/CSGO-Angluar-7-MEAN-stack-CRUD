@@ -3,21 +3,21 @@ const fs = require('fs');
 const app = express();
 const multer = require('multer');
 const weaponRoute = express.Router();
-// const DIR = './uploads';
+const DIR = './uploads';
 
 
-// let storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, DIR);
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, file.fieldname + '-' + Date.now() + '.' + file.originalname);
+let storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, DIR);
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '-' + Date.now() + '.' + file.originalname);
 
-//     // this is the file name it is always unique save this value to db => file.fieldname + '-' + Date.now() + '.' + file.originalname
-//   }
-// });
+    // this is the file name it is always unique save this value to db => file.fieldname + '-' + Date.now() + '.' + file.originalname
+  }
+});
 
-// let upload = multer({storage: storage});
+let upload = multer({storage: storage});
 
 // weaponRoute.route('/upload').post(upload.single('photo'), function (req, res) {
 //   //  weapon.findById(req.params.id, function(err, weapons){
@@ -38,32 +38,32 @@ const weaponRoute = express.Router();
   
 // });
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-//   res.setHeader('Access-Control-Allow-Methods', 'POST');
-//   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-//   res.setHeader('Access-Control-Allow-Credentials', true);
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   
-//     // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-// });
+    // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 
-// app.post('/Weapon/upload',upload.single('photo'), function (req, res) {
-//   if (!req.file) {
-//       console.log("No file received");
-//       return res.send({
-//         success: false
-//       });
+app.post('/Weapon/upload',upload.single('photo'), function (req, res) {
+  if (!req.file) {
+      console.log("No file received");
+      return res.send({
+        success: false
+      });
   
-//     } else {
-//       console.log('file received');
-//       return res.send({
-//         success: true
-//       })
-//     }
-// });
+    } else {
+      console.log('file received');
+      return res.send({
+        success: true
+      })
+    }
+});
 
 
 
@@ -135,7 +135,7 @@ weaponRoute.route('/update/:id').post(function (req, res) {
 
 // Defined delete | remove | destroy route
 weaponRoute.route('/delete/:id').get(function (req, res) {
-  // console.log(req.params.id);  
+  console.log(req.params.id);  
   weapon.findByIdAndRemove({_id: req.params.id}, function(err, business){
         if(err) res.json(err);
         else res.json('Successfully removed');

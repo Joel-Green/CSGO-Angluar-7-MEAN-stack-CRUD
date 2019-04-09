@@ -7,151 +7,22 @@
     <span (click)="scrollTo(area)"><h3 ><i class="fas fa-chevron-down"></i></h3></span> 
   </div>
 </div>
-
-<div class="row">
-  <div class="col-lg-5 offset-lg-1 col-sm-4">
-    <form class="text-white text-center">
-      <h1>Add Weapons</h1>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label>Weapon Name</label>
-          <input type="text" class="form-control" name="weapon_name" [(ngModel)]="weapon_name">
-        </div>
-        <div class="form-group col-md-6">
-          <label >Weapon Damage</label>
-          <input type="number" class="form-control" name="weapon_damage" [(ngModel)]="weapon_damage">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label >Weapon Recoil</label>
-          <input type="text" class="form-control" name="weapon_recoil" [(ngModel)]="weapon_recoil">
-        </div>
-        <div class="form-group col-md-6">
-          <label>Weapon FireRate</label>
-          <input type="text" class="form-control" name="weapon_FireRate" [(ngModel)]="weapon_FireRate">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-5">
-          <label >Weapon Mobility</label>
-          <input type="text" class="form-control" name="weapon_mobility" [(ngModel)]="weapon_mobility" >
-        </div>
-        <div class="form-group col-md-5">
-          <label >image</label>
-          <input type="file" name="photo" (change)="onFileChanged($event)" #fileInput >
-          
-        </div>
-      </div>
-      <button type="button" class="btn btn-dark" (click)="add_data()">Upload</button>
-    </form>
-  </div>
-  <div class="col-lg-5 offset-lg-1 text-white text-center table-responsive-sm">
-    <h1>Display Weapons</h1>
-    <br>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Damage</th>
-          <th scope="col">Recoil</th>
-          <th scope="col">Firerate</th>
-          <th scope="col">Mobility</th>
-          <th scope="col" colspan="2">Changes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let objarr of arr">
-          <td>{{objarr.weapon_name}}</td>
-          <td>{{objarr.weapon_damage}}</td>
-          <td>{{objarr.weapon_recoil}}</td>
-          <td>{{objarr.weapon_FireRate}}</td>
-          <td>{{objarr.weapon_mobility}}</td>
-          <td colspan="2"><button class="button btn-dark" (click)="deleteData(objarr._id)">Delete</button>
-            <a class="button btn-dark" [routerLink]="['/update',objarr._id]">Update</a><br>
-            <a class="button btn-dark" [routerLink]="['/upload',objarr._id]">Upload Image</a>
-          </td>
-        </tr>
-        
-      </tbody>
-    </table>
-  </div>
 <br>
 <br>
 <br>
 <br>
 <br>
 <div class="row">
-  <div class="col-lg-4 offset-lg-1">
-    <form class="text-white text-center">
-      <h1>Add Utility</h1>
-      <div class="form-row">
-        <div class="form-group col-md-12">
-          <label>Utility Name</label>
-          <br>
-          <input type="text" class="form-control" name="weapon_name" [(ngModel)]="weapon_name">
-        </div>
-        
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group col-md-12">
-          <label>Choose An Image</label>
-          <div class="input-group mb-3">
-            <div class="custom-file">
-              <label>Image</label>
-              <input type="file" >
-            </div>
-          </div>
-        </div>
-      </div>
-      <button type="button" class="btn btn-dark" (click)="add_data()">Upload</button>
-    </form>
-  </div>
-  
-  <div class="col-lg-5 offset-lg-1 text-white text-center">
-    <h1>Display Utlity</h1>
-    <br>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col" colspan="3">Changes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td><button class="button btn-dark">Delete</button>
-            <button class="button btn-dark">Update</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <div class="col-lg-2 offset-lg-2" (click)="addWeapon()"><h1 class="text-white text-center"> Weapons</h1></div>
+  <div class="col-lg-2" (click)="addUpdates()"><h1 class="text-white text-center"> Updates</h1></div>
+  <div class="col-lg-2" (click)="addUtility()"><h1 class="text-white text-center"> Utility</h1></div>
+  <div class="col-lg-2" (click)="addFeedback()" ><h1 class="text-white text-center"> Feedback</h1></div>
 </div>
 
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 offset-lg-1">
-      <form class="text-white text-center">
-        <h1>Add updates</h1>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>heading</label>
-            <input type="text" class="form-control" name="heading" [(ngModel)]="heading">
-          </div>
-          <div class="form-group col-md-6">
-            <label >content</label>
-            <input type="text" class="form-control" name="content" [(ngModel)]="content">
-          </div>
-        </div>
-        <button type="button" class="btn btn-dark" (click)="add_upload_data()">Upload</button>
-      </form>
-    </div>
-  </div>
+<div class="row">
+  <div class="col-lg-12" *ngIf="chkPage==1"><app-dash-weapon></app-dash-weapon></div>
+  <div class="col-lg-12" *ngIf="chkPage==2"><app-dash-updates></app-dash-updates></div>
+  <div class="col-lg-12" *ngIf="chkPage==3"><app-dash-utility></app-dash-utility></div>
+  <div class="col-lg-12" *ngIf="chkPage==4"><app-dash-feedback></app-dash-feedback></div>
 </div>

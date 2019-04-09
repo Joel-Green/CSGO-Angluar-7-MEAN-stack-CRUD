@@ -4,7 +4,6 @@ export  class weaponClass {
     weapon_recoil: String;
     weapon_FireRate: String;
     weapon_mobility: String;
-    image_upload:String;
   }
 
 export class updateClass{
