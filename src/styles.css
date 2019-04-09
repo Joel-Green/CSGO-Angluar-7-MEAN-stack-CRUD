@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+	font-family: 'Questrial';
+    font-weight: 100;
+    background-color: black; 
+    overflow-x: hidden;
+}
+/*SCROLLBAR ENHANCEMENTS*/
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar:hover{
+      width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /* background: silver;  */
+    border-radius: 200px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    /* background: rgb(red, green, blue);  */
+    border-radius: 200px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    /* transition: 0.5s ease-in-out; */
+  }
+  /*SCROLLBAR DONE*/
+  
+
+/* 
+
+
+font-family: 'Muli', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Questrial', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Comfortaa', cursive;
+
+*/

@@ -1,0 +1,91 @@
+.mainheading h1{
+    font-family: 'Questrial';
+    font-size:80px !important;
+    margin-top:30vh;
+}
+.container h1{
+    animation: fadeInUp 1.6s ease-in-out 1;
+}
+.container p{
+    animation: fadeIn 2.5s ease-in-out 1;
+}
+.contentrow .img-thumbnail{
+    box-shadow: inset 1px 0px 10px 5px #000000;
+	opacity: 0.5;
+	transition: 0.5s cubic-bezier(0.4,0.0,1,1);
+    animation: slideInLeft 1s ease-in-out 1;
+    border:none;
+    height: 260px;
+    width: 400px;
+}
+
+.contentrow .img-thumbnail:hover{
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+    transform:scale(1.02);
+}
+.container h3{
+    animation:test 1.5s ease-in-out infinite;
+    /* font-family: 'Comfortaa'; */
+    color:#fff;
+    font-size:30px;
+}
+.container
+{
+    height: 430px;
+    /* background-color: aqua; */
+}
+@keyframes test{
+    0%{
+        transform: translateY(0px) scale(1.2);
+        transition: .1s ease-in-out;
+    }
+    50%{
+        transform: scale(1.6) translateY(20px);
+        transition: .1s ease-in-out;
+        
+    }
+    100%{
+        transform: translateY(0px) scale(1.2);
+        transition: .1s ease-in-out;
+    }
+}
+.fa-chevron-down{
+    font-size:30px;
+    cursor: pointer;
+}
+
+
+.contact .col-lg-12{
+	background-color: rgba(0,0,0,0.5);
+	background-image: url("../../assets/images/feedback.jpg");
+	height: 620px;
+	background-size: cover;
+	box-shadow: inset 1px 0px 10px 5px #000000;
+}
+
+.col-lg-7{
+	height:720px;
+}
+
+/*FORM CHANGES*/
+label{
+    color: white;
+    font-size:20px;
+}
+
+.form-control{
+	background-color: transparent;
+	border:transparent;
+	border-bottom: 2px solid silver;
+}
+
+.form-control:focus{
+	background-color: transparent;
+	box-shadow: none;
+    color:white;
+    text-align: center;
+
+}
+
+/*FORM OVER*/

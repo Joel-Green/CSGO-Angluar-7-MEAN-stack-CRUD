@@ -1,0 +1,33 @@
+/*NAVBAR STARTS HERE*/
+
+.navbar{
+    font-family:'Comfortaa';
+}
+
+.bg-dark{
+	background-color: #000000 !important; 
+}
+
+.nav-item a{
+    color: white;
+    font-size:20px;
+}
+.nav-item img{
+    width: 90px;
+    background: white;
+}
+
+.navbar{
+    /* box-shadow:2px 2px 2px; */
+    animation:fadeIn 1s ease-in-out 1;
+    /* box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75); */
+    /* box-shadow: 0px 20px 9px 0px rgba(0,0,0,0.75); */
+    box-shadow: 4px 25px 17px -5px rgba(0,0,0,0.75);
+
+}
+
+.navbar-toggler{
+    position: relative;
+    left:90%;
+}
+/*NAVBAR ENDS HERE*/

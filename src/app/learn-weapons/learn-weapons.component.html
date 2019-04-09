@@ -1,0 +1,44 @@
+<div class="container" >
+  <span *ngFor="let objarr of arr; let i=index">
+    <span *ngIf="page==(i+1)">
+      <div class="row" >
+        <div class="col-lg-8">
+            <img  [src]="objarr.weapon_image" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col-lg-4" > 
+          
+          <h3 class="text-center text-white" >Weapon Stats</h3>
+          
+          <p><ngb-progressbar type="danger" [value]="objarr.weapon_damage" height="20px">DAMAGE</ngb-progressbar></p>
+          <br>
+          <p><ngb-progressbar type="warning" [value]="objarr.weapon_recoil" height="20px">RECOIL CONTROL</ngb-progressbar></p>
+          <br>
+          <p><ngb-progressbar type="success" [value]="objarr.weapon_FireRate" height="20px">FIRE RATE</ngb-progressbar></p>
+          <br>
+          <p><ngb-progressbar type="info" [value]="objarr.weapon_mobility" height="20px">{{height}} MOBILITY</ngb-progressbar></p>
+          
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-lg-12" >
+          <div class="col-lg-4 offset-lg-4" class="text-white">
+            <h2 class="text-center text-white weaponname">{{objarr.weapon_name}}</h2>
+          </div>
+        </div>
+      </div>
+    </span>
+  </span>
+  <div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        <ngb-pagination [collectionSize]="arr.length*10" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination >
+    </div>
+    </div>
+  </div>
+  
+  
+  <!-- SAMPLE CODE FOR THE PAGINATION -->
+  <!-- <div class="col-lg-6">
+    
+    
+    
+  </div> -->

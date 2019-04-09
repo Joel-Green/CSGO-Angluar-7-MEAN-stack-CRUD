@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-fluid text-center text-white bg-transparent">
+    <div class="container mainheading">
+      <h1>Learn</h1> 
+      <br><br>
+      <p>Dive Deep Into The World Of CS:GO</p>
+      <br><br>
+      <span (click)="scrollTo(area)"><h3 ><i class="fas fa-chevron-down"></i></h3></span>
+       
+    </div>
+</div>
+<div class="container">
+  <div class="row" #area>
+      <div class="col-lg-3">
+        <h1 class="text-white text-center" [class.DIVERSION]="chkPage==1" (click)="setMap()">Maps</h1>
+      </div>
+      <div class="col-lg-3">
+        <h1 class="text-white text-center" [class.DIVERSION]="chkPage==2" (click)="setWeapon()">Weapons</h1>
+      </div>
+      <div class="col-lg-3">
+        <h1 class="text-white text-center" [class.DIVERSION]="chkPage==3" (click)="setAim()">Training</h1>
+      </div>
+      <div class="col-lg-3">
+        <h1 class="text-white text-center" [class.DIVERSION]="chkPage==4" (click)="setUtility()">Utility</h1>
+      </div>
+    </div>
+  <div *ngIf="chkPage==1"><app-learn-maps></app-learn-maps></div>
+  <div *ngIf="chkPage==2"><app-learn-weapons></app-learn-weapons></div>
+  <div *ngIf="chkPage==3"><app-learn-aim></app-learn-aim></div>
+  <div *ngIf="chkPage==4"><app-learn-utility></app-learn-utility></div>
+</div>

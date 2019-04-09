@@ -1,0 +1,43 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="col-lg-5 offset-lg-4 col-sm-4">
+  <form class="text-white text-center">
+    <h1>Update Weapon Details</h1>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Weapon Name</label>
+        <input type="text" class="form-control" name="obj.weapon_name" [(ngModel)]="obj.weapon_name">
+      </div>
+      <div class="form-group col-md-6">
+        <label >Weapon Damage</label>
+        <input type="number" class="form-control" name="obj.weapon_damage" [(ngModel)]="obj.weapon_damage">
+      </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label >Weapon Recoil</label>
+      <input type="text" class="form-control" name="obj.weapon_recoil" [(ngModel)]="obj.weapon_recoil">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Weapon FireRate</label>
+      <input type="text" class="form-control" name="obj.weapon_FireRate" [(ngModel)]="obj.weapon_FireRate">
+    </div>
+  </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label >Weapon Mobility</label>
+        <input type="text" class="form-control" name="obj.weapon_mobility" [(ngModel)]="obj.weapon_mobility" >
+      </div>
+      <div class="input-group col-md-6">
+          <div class="form-group col-md-6">
+            <label>Image</label>
+            <input type="file" name="">
+          </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-dark" (click)="up_data()">Update</button>
+  </form>
+</div>

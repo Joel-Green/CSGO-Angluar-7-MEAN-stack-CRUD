@@ -1,0 +1,61 @@
+.mainheading h1{
+    font-family: 'Questrial';
+    font-size:80px !important;
+    margin-top:30vh;
+}
+.mainheading{
+    height: 65vh;
+}
+.container h1{
+    animation: fadeInUp 1.6s ease-in-out 1;
+    font-family: 'Questrial';
+}
+.container p{
+    animation: fadeIn 2.5s ease-in-out 1;
+}
+.container h3{
+    animation:test 1.5s ease-in-out infinite;
+    /* font-family: 'Comfortaa'; */
+    color:#fff;
+    font-size:30px;
+}
+
+.container
+{
+    /* height: 430px; */
+    /* background-color: aqua; */
+}
+@keyframes test{
+    0%{
+        transform: translateY(0px) scale(1.2);
+        transition: .1s ease-in-out;
+    }
+    50%{
+        transform: scale(1.6) translateY(20px);
+        transition: .1s ease-in-out;
+        
+    }
+    100%{
+        transform: translateY(0px) scale(1.2);
+        transition: .1s ease-in-out;
+    }
+}
+.fa-chevron-down{
+    font-size:30px;
+    cursor: pointer;
+}
+
+
+.DIVERSION{
+    border-bottom: 0.5px solid #fff;
+    border-width: 5px;
+    animation:fadeIn 1s ease-in-out 1;   
+}
+
+.col-lg-3{
+    cursor: pointer; 
+}
+
+/* .col-lg-3:hover{
+    text-decoration: underline;
+} */

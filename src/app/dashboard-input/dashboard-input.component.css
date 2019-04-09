@@ -1,0 +1,36 @@
+
+.jumbotron h1,p{
+    font-family: 'Questrial';
+}
+
+.jumbotron h1{
+    font-size:80px;
+    margin-top:100px;
+}
+
+.custom-file-label{
+    margin-top:32px;
+    background: black;
+}
+
+.custom-file-input{
+    background-color:black;
+}
+
+label{
+    color: white;
+    font-size:20px;
+}
+
+.form-control{
+	background-color: transparent;
+	border:transparent;
+	border-bottom: 2px solid #fff;
+}
+
+.form-control:focus{
+	background-color: transparent;
+	box-shadow: none;
+	color:white;
+
+}

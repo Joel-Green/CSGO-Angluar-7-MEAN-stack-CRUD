@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row main1">
+      <div class="col-lg-12"></div>
+    </div>
+    <div class="row main2">
+      <!-- <div class="row space"></div> -->
+      <div class="col-lg-12">
+        <div class="col-lg-6 offset-lg-3 text-center">
+        <h1>
+          <br>
+          <br>
+          <br>
+          <img src="../../assets/images/logo2.jpg">
+          <br>
+          </h1>
+          <br>
+        <h1>CS.GG </h1>
+        <br>
+        <br>
+        <span (click)="scrollTo(area)"><h3 ><i class="fas fa-chevron-down"></i></h3></span>
+      </div>
+      </div>
+    </div>    
+</div>
+
+
+<div class="container-fluid SIDE">
+  
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="text-center display-3">Pick Your Side</h1>
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="col-lg-5 offset-lg-1 cts">
+        <img src="../../assets/images/cts.jpg" (click)="ctData()">
+        <h1 class=" text-center">Counter Terrorists</h1>
+    </div>
+    <div class="col-lg-5 ts">
+        <img src="../../assets/images/ts.jpg" (click)="tData()">
+        <h1 class=" text-center" > Terrorists</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12" *ngIf="chkPage==1" ><app-ct-data></app-ct-data></div>
+    <div class="col-lg-12" *ngIf="chkPage==2" ><app-t-data></app-t-data></div>
+  </div>
+
+</div>

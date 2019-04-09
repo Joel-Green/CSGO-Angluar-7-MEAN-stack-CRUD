@@ -1,0 +1,141 @@
+.main2 img{
+    height: 200px;
+    width: 360px;
+}
+
+.main2 .col-lg-6 img{
+    animation:fadeIn 1s ease-in-out 1;
+    animation:fadeInDown 1.3s ease-in-out 1;
+    overflow:hidden;
+    
+}
+
+.main2 .col-lg-6 h1:nth-child(3){
+    color:#fff;
+    font-family: 'Righteous';
+    animation:fadeInDown 1s ease-in-out 1;
+}
+
+.main2 .col-lg-6 h3{
+    animation:test 1.5s ease-in-out infinite;
+    /* font-family: 'Comfortaa'; */
+    color:#fff;
+    font-size:30px;
+}
+@keyframes test{
+    0%{
+        transform: translateY(0px) scale(1.2);
+        transition: .1s ease-in-out;
+    }
+    50%{
+        transform: scale(1.6) translateY(20px);
+        transition: .1s ease-in-out;
+        
+    }
+    100%{
+        transform: translateY(0px) scale(1.2);
+        transition: .1s ease-in-out;
+    }
+}
+.container-fluid
+{
+    height: 100vh;
+}    
+.fa-chevron-down{
+    font-size:30px;
+    cursor: pointer;
+}
+
+
+
+.cts img{
+    opacity: 0.5;
+    transition:0.7s ease-in-out;
+    border-radius: 15px;
+    border:2px solid black;
+}
+.cts img:hover{
+    opacity: 1;
+    transition:0.7s ease-in-out;
+    border:2px solid rgb(78, 88, 133);
+
+}
+.ts img{
+    opacity: 0.5;
+    transition:0.7s ease-in-out;
+    border-radius: 15px;
+    border:2px solid black;
+
+}
+
+.ts h1{
+    opacity: 0;
+    transition:0.7s ease-in-out;
+    color:#ad935f;
+}
+
+.ts img:hover~h1{
+    opacity: 1;
+    transition:0.7s ease-in-out;
+}
+
+
+
+
+.cts h1{
+    opacity: 0;
+    transition:0.7s ease-in-out;
+    color:  rgb(78, 88, 133);
+}
+
+.cts img:hover~h1{
+    opacity: 1;
+    transition:0.7s ease-in-out;
+
+}
+
+.ts img:hover{
+    opacity: 1;
+    transition:0.7s ease-in-out;
+    border:2px solid #ad935f;
+
+}
+
+.col-lg-5 img{
+    overflow: hidden;
+    width:100%;
+    
+    background-position: center;
+    /* background-size: cover; */
+}
+
+
+app-ct-data{
+    animation:fadeInUp 1s ease-in-out 1;
+}
+
+.display-3{
+    font-family: "Questrial";
+    color:white;
+    
+}
+
+.forums h1{
+    color:white;
+    font-size:70px;
+}
+
+
+.row .col-lg-8 h1,span{
+    color:gray;
+}
+
+.container{
+    margin-top:200px;
+}
+
+@media screen and (min-width: 480px) {
+    .container{
+        margin-top:1000px;
+    }
+    }
