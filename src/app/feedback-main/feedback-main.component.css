@@ -55,6 +55,10 @@
     cursor: pointer;
 }
 
+.col-lg-4{
+    cursor: pointer;
+}
+
 
 .contact .col-lg-12{
 	background-color: rgba(0,0,0,0.5);
@@ -88,4 +92,7 @@ label{
 
 }
 
+.btn-primary{
+
+}
 /*FORM OVER*/

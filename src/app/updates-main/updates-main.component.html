@@ -9,10 +9,11 @@
           <span (click)="scrollTo(area)"><h3 ><i class="fas fa-chevron-down"></i></h3></span> 
         </div>
 </div>
+<div #area></div>
 <span *ngFor="let objarray of array">
-    <div class="row contentrow" #area> 
+    <div class="row contentrow" > 
         <div class="col-lg-4 offset-lg-1 col-md-8 offset-md-2 col-sm-8 offset-sm-2">
-            <img class="img-thumbnail" src="../../assets/images/VALVE.png">
+            <img class="img-thumbnail" src="../../assets/images/{{objarray.image}}">
         </div>
         <div class="col-lg-6 jumbotron text-center text-white bg-transparent">
             <h1>{{objarray.heading}}</h1> 

@@ -53,9 +53,9 @@
           <td>{{objarr.weapon_recoil}}</td>
           <td>{{objarr.weapon_FireRate}}</td>
           <td>{{objarr.weapon_mobility}}</td>
-          <td colspan="2"><button class="button btn-dark" (click)="deleteData(objarr._id)">Delete</button>
-            <a class="button btn-dark" [routerLink]="['/update',objarr._id]">Update</a><br>
-            <a class="button btn-dark" [routerLink]="['/upload',objarr._id]">Upload Image</a>
+          <td colspan="2"><button class="btn text-white btn-outline-dark" (click)="deleteData(objarr._id)">Delete</button>
+            <button class="btn text-white btn-outline-dark" [routerLink]="['/update',objarr._id]">Update</button><br>
+            <button class="btn text-white btn-outline-dark" [routerLink]="['/upload',objarr._id]">Upload Image</button>
           </td>
         </tr>
         

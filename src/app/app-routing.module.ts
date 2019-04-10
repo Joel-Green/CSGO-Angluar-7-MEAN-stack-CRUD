@@ -14,6 +14,7 @@ import { UpdateDataComponent } from './update-data/update-data.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { DashUpdatesComponent } from './dash-updates/dash-updates.component';
 import { DashUpdateContentComponent } from './dash-update-content/dash-update-content.component';
+import { UpdatepageimguploadComponent } from './updatepageimgupload/updatepageimgupload.component';
 
 
 const routes: Routes = [{
@@ -53,6 +54,9 @@ const routes: Routes = [{
 {
   path:"upload/:id",component:UploadImageComponent
 },
+{
+  path:"uploadImage/:id",component:UpdatepageimguploadComponent
+}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes,{scrollPositionRestoration:'enabled'})],

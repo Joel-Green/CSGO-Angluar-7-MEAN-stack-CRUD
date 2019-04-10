@@ -37,6 +37,7 @@ export class DashWeaponComponent implements OnInit {
     deleteData(id) {
       this.ws.deleteData(id).subscribe(res => {
         console.log('Deleted');
+        this.router.navigate(['dashboard']);
       });
     }
   

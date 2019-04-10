@@ -18,4 +18,12 @@ export class FeedbackService {
     this.http.post(`${this.url}/adding`, obj)
         .subscribe(res => console.log('Get_Right done'));
   }
+  getlul() {
+    return this.http.get(`${this.url}`);
+  }
+  deleteData(id) {
+    return this
+              .http
+              .get(`${this.url}/delete/${id}`);
+  }
 }

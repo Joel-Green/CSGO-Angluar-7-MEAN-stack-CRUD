@@ -33,6 +33,7 @@ import { DashUtilityComponent } from './dash-utility/dash-utility.component';
 import { DashFeedbackComponent } from './dash-feedback/dash-feedback.component';
 import { DashUpdatesComponent } from './dash-updates/dash-updates.component';
 import { DashUpdateContentComponent } from './dash-update-content/dash-update-content.component';
+import { UpdatepageimguploadComponent } from './updatepageimgupload/updatepageimgupload.component';
 
 
 
@@ -62,7 +63,8 @@ import { DashUpdateContentComponent } from './dash-update-content/dash-update-co
     DashUtilityComponent,
     DashFeedbackComponent,
     DashUpdatesComponent,
-    DashUpdateContentComponent
+    DashUpdateContentComponent,
+    UpdatepageimguploadComponent
   ],
   imports: [
     NgbModule,

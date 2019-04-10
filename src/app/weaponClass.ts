@@ -9,4 +9,12 @@ export  class weaponClass {
 export class updateClass{
   heading:string;
   content:string;
+  image:string;
+}
+
+export class feedbackClass{
+  name:string;
+  phone:string;
+  email:string;
+  message:string;
 }

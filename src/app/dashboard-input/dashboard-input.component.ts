@@ -48,6 +48,10 @@ export class DashboardInputComponent implements OnInit {
     
   }
 
+  scrollTo(el:HTMLElement)
+  {
+    el.scrollIntoView({behavior: "smooth"});
+  }
   // update_data(id){
   //   this.ws.up_data(this.weapon_name,this.weapon_damage,this.weapon_recoil,this.weapon_FireRate,this.weapon_mobility,id);
   //   console.log(id);

@@ -1,1 +1,31 @@
-dsadjksajkdjksa
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        <table class="table text-white">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Message</th>
+                <th scope="col" colspan="2">Changes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let objarr of Arr">
+                <td>{{objarr.name}}</td>
+                <td>{{objarr.phone}}</td>
+                <td>{{objarr.email}}</td>
+                <td>{{objarr.message}}</td>
+                <td colspan="4"><button class="btn btn-outline-dark" (click)="deleteData(objarr._id)">Delete</button>
+                </td>       
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+

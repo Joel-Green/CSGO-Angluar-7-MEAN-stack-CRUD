@@ -2,7 +2,7 @@
   <div class="container mainheading">
     <h1>Dashboard</h1> 
     <br><br>
-    <p>Missed Something? Let Us Know.</p>
+    <p>Welcome Anonymous</p>
     <br><br>
     <span (click)="scrollTo(area)"><h3 ><i class="fas fa-chevron-down"></i></h3></span> 
   </div>
@@ -12,17 +12,17 @@
 <br>
 <br>
 <br>
-<div class="row">
-  <div class="col-lg-2 offset-lg-2" (click)="addWeapon()"><h1 class="text-white text-center"> Weapons</h1></div>
-  <div class="col-lg-2" (click)="addUpdates()"><h1 class="text-white text-center"> Updates</h1></div>
-  <div class="col-lg-2" (click)="addUtility()"><h1 class="text-white text-center"> Utility</h1></div>
-  <div class="col-lg-2" (click)="addFeedback()" ><h1 class="text-white text-center"> Feedback</h1></div>
+<div class="row" #area>
+  <div class="col-lg-4 " [class.DIVERSION]="chkPage==1" (click)="addWeapon()"><h1 class="text-white text-center"> Weapons</h1></div>
+  <div class="col-lg-4" [class.DIVERSION]="chkPage==2" (click)="addUpdates()"><h1 class="text-white text-center"> Updates</h1></div>
+  <!-- <div class="col-lg-3" (click)="addUtility()"><h1 class="text-white text-center"> Utility</h1></div> -->
+  <div class="col-lg-4" [class.DIVERSION]="chkPage==4" (click)="addFeedback()" ><h1 class="text-white text-center"> Feedback</h1></div>
 </div>
 
 
 <div class="row">
   <div class="col-lg-12" *ngIf="chkPage==1"><app-dash-weapon></app-dash-weapon></div>
   <div class="col-lg-12" *ngIf="chkPage==2"><app-dash-updates></app-dash-updates></div>
-  <div class="col-lg-12" *ngIf="chkPage==3"><app-dash-utility></app-dash-utility></div>
+  <!-- <div class="col-lg-12" *ngIf="chkPage==3"><app-dash-utility></app-dash-utility></div> -->
   <div class="col-lg-12" *ngIf="chkPage==4"><app-dash-feedback></app-dash-feedback></div>
 </div>

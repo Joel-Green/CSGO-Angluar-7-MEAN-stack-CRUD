@@ -7,6 +7,9 @@ let update = new Schema({
     content:{
         type:String
       },
+    image:{
+      type:String
+    }
     },
   {
       collection: 'Update'

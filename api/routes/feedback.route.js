@@ -34,4 +34,15 @@ feedbackRoute.route('/').get(function (req, res) {
 });
 });
 
+//////////////////////////////////////
+feedbackRoute.route('/delete/:id').get(function (req, res) {
+  console.log(req.params.id);  
+  feedback.findByIdAndRemove({_id: req.params.id}, function(err, feedback){
+        if(err) res.json(err);
+        else res.json('Successfully removed');
+    });
+});
+
+
+
 module.exports = feedbackRoute;

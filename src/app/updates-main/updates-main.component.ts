@@ -10,6 +10,7 @@ import { UpdatepageService } from '../updatepage.service';
 export class UpdatesMainComponent implements OnInit {
   heading:string;
   content:string;
+  image:string;
   array:updateClass[];
   constructor(private us:UpdatepageService) { }
 

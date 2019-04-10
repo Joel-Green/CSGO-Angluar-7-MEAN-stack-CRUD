@@ -1,8 +1,11 @@
+<br>
+<br>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-lg-4 offset-lg-1">
       <form class="text-white text-center">
-        <h1>Add updates</h1>
+        <h1>Add Updates Content</h1>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label>heading</label>
@@ -14,11 +17,11 @@
           </div>
         </div>
         <button type="submit" class="btn btn-dark" (click)="add_upload_data()">Upload</button>
-        <button type="submit" class="btn btn-danger">Reload</button>
+        <!-- <button type="submit" class="btn btn-danger">Reload</button> -->
       </form>
     </div>
-    <div class="col-lg-4 offset-lg-1">
-      <h1 class="text-white text-center">Display Updates</h1>
+    <div class="col-lg-6 offset-lg-1">
+      <h1 class="text-white text-center">Updates Content</h1>
     <br>
     <table class="table text-white">
       <thead>
@@ -32,9 +35,11 @@
         <tr *ngFor="let objarr of array">
           <td>{{objarr.heading}}</td>
           <td>{{objarr.content}}</td>
-          <td colspan="2"><button class="button btn-dark" (click)="deleteData(objarr._id)">Delete</button>
-            <a class="button btn-dark" [routerLink]="['/upcontent',objarr._id]">Update</a><br>
+          <td colspan="4"><button class="btn btn-outline-dark" (click)="deleteData(objarr._id)">Delete</button>
+            <button class="btn btn-outline-dark" [routerLink]="['/upcontent',objarr._id]">Update</button><br>
+            <button class="btn btn-outline-dark" [routerLink]="['/uploadImage',objarr._id]">Upload Image</button>
           </td>
+          
         </tr>
       </tbody>
     </table>

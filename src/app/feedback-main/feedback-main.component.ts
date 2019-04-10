@@ -15,6 +15,10 @@ export class FeedbackMainComponent implements OnInit {
 
   ngOnInit() {
   }
+  scrollTo(el:HTMLElement)
+  {
+    el.scrollIntoView({behavior: "smooth"});
+  }
   feedback_add_data(){
     this.fs.feedback_add_data(this.name,this.phone,this.email,this.message);
   }
